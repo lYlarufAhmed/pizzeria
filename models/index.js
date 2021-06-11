@@ -47,7 +47,7 @@ let pizzas = [
         ]
     }
 ]
-(async function () {
+async function createConnection () {
     console.log()
     await mg.connect("mongodb://127.0.0.1/pizzeria",
         {
@@ -56,15 +56,20 @@ let pizzas = [
             useCreateIndex: true
         }
     )
-})()
+}
+createConnection()
 
 
-(async function () {
-    for (let p of pizzas) {
-        let buffer = new Pizza(p)
-        await buffer.save()
-    }
-})()
+// async function createPizzas () {
+//     for (let p of pizzas) {
+//         let newPizza = {...p, 'ingredients': {name: p.ingredients} }
+//         console.log(newPizza)
+//         let buffer = new Pizza(newPizza)
+//         await buffer.save()
+//     }
+// }
+
+// createPizzas()
 
 module.exports = {
     getAllPizzas

@@ -11,8 +11,7 @@ const PizzaSchema = new mg.Schema({
         required: true
     },
     ingredients:{
-        name: [String],
-        required: true
+        name: [String]
     }
 }, {timestamps: true})
 

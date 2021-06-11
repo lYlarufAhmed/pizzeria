@@ -1,4 +1,4 @@
-let Pizza = require('schema')
+let Pizza = require('./schema')
 
 let getAllPizzas = async () => {
     try {
